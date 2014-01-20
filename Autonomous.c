@@ -30,9 +30,7 @@ task main()
 
 	waitForStart(); // Wait for the beginning of autonomous phase.
 
-
-
-	while (true)
+	while (true) // goes forever
 	{
 		motor[motor_left] = 100;
 		motor[motor_right] = 100;
