@@ -21,6 +21,7 @@ void initializeRobot()
 	// Sensors are automatically configured and setup by ROBOTC. They may need a brief time to stabilize.
 
 	return;
+
 }
 
 task main()
