@@ -34,13 +34,13 @@ task main()
 	{
 		motor[motor_left] = 100;
 		motor[motor_right] = 100;
-		wait1Msec(3000);
+		wait1Msec(2000);
 		motor[motor_left] = 100;
 		motor[motor_right] = -100;
-		wait1Msec(3000);
+		wait1Msec(1500);
 		motor[motor_left] = 100;
 		motor[motor_right] = 100;
-		wait1Msec(3000);
+		wait1Msec(2000);
 		motor[motor_left] = 0;
 		motor[motor_left] = 0;
 		wait10Msec(300000);
