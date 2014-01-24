@@ -35,16 +35,18 @@ task main()
 	while (true)
 	{
 		motor[motor_left] = 100;
+		motor[motor_right] = -100;
+		wait1Msec(1500);
+		motor[motor_left] = 100;
 		motor[motor_right] = 100;
-		wait1Msec(3000);
+		wait1Msec(750);
 		motor[motor_left] = 100;
 		motor[motor_right] = -100;
-		wait1Msec(3000);
-		motor[motor_left] = 100;
-		motor[motor_right] = 100;
-		wait1Msec(3000);
+		wait1Msec(1200);
+
 		motor[motor_left] = 0;
-		motor[motor_left] = 0;
-		wait10Msec(300000);
+		motor[motor_right] = 0;
+		wait1Msec(99999999);
+
 	}
 }
