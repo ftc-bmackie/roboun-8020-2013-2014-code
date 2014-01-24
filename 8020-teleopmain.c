@@ -34,7 +34,7 @@
 
 #include "Drive Module.c"    //Includes file that translates from moving the joystick on the controler to having the wheels move
 #include "Cranker.c"
-// #include "GrabberArm_Servo.c"
+#include "GrabberArm_Servo.c"
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //
