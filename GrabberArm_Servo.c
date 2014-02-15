@@ -1,8 +1,12 @@
 
 void ArmGrabber() {
-{
-	if (joy1_Btn(GRAB_UP))
 	{
+		if (joy1Btn(4))
+		{
 
-	servo[Shoulder]=?
+			servo[Left_Shoulder] = 13;
+			servo[Right_Shoulder] = 255;
 
+		}
+	}
+}
