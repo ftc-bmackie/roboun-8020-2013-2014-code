@@ -1,10 +1,11 @@
 #pragma config(Hubs,  S1, HTMotor,  HTServo,  HTMotor,  none)
+#pragma config(Sensor, S1,     ,               sensorI2CMuxController)
 #pragma config(Motor,  mtr_S1_C1_1,     motor_left,    tmotorTetrix, openLoop, reversed)
 #pragma config(Motor,  mtr_S1_C1_2,     motor_right,   tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C3_1,     crank_motor,   tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C3_2,     motorG,        tmotorTetrix, openLoop)
-#pragma config(Servo,  srvo_S1_C2_1,    Left_Shoulder,        tServoStandard)
-#pragma config(Servo,  srvo_S1_C2_2,    Right_Shoulder,       tServoStandard)
+#pragma config(Servo,  srvo_S1_C2_1,    left_shoulder,        tServoStandard)
+#pragma config(Servo,  srvo_S1_C2_2,    right_shoulder,       tServoStandard)
 #pragma config(Servo,  srvo_S1_C2_3,    servo3,               tServoNone)
 #pragma config(Servo,  srvo_S1_C2_4,    servo4,               tServoNone)
 #pragma config(Servo,  srvo_S1_C2_5,    servo5,               tServoNone)
@@ -24,14 +25,24 @@
 
 #include "JoystickDriver.c"  //Include file to "handle" the Bluetooth messages.
 
-#define CRANK_LEFT              4
-#define CRANK_RIGHT             5
-#define CRANK_POWER_LEFT        -100
-#define CRANK_POWER_RIGHT       100
 #define Button_X	1
 #define Button_A	2
 #define Button_B	3
 #define Button_Y	4
+#define Button_LB 5
+#define Button_LT 6
+#define Button_RB 7
+#define Button_RT 8
+
+
+#define CRANK_LEFT              Button_X
+#define CRANK_RIGHT             Button_B
+#define CRANK_POWER_LEFT        -100
+#define CRANK_POWER_RIGHT       100
+
+#define SHOULDER_UP             Button_LB
+#define SHOULDER_DOWN           Button_LT
+
 
 #include "Drive Module.c"    //Includes file that translates from moving the joystick on the controler to having the wheels move
 #include "Cranker.c"
@@ -109,6 +120,6 @@ task main()
 
 		Driver();
 		Crank();
-
+    ArmGrabber();
   }
 }

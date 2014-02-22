@@ -1,11 +1,19 @@
+#define SHOULDER_OFFSET 13
 
 void ArmGrabber() {
 	{
-		if (joy1Btn(4))
+		if (joy1Btn(SHOULDER_UP))
 		{
 
-			servo[Left_Shoulder] = 13;
-			servo[Right_Shoulder] = 255;
+			servo[left_shoulder] = 0 + SHOULDER_OFFSET;
+			servo[right_shoulder] = 255;
+
+		}
+				if (joy1Btn(SHOULDER_DOWN))
+		{
+
+			servo[left_shoulder] = 255 - SHOULDER_OFFSET;
+			servo[right_shoulder] = 0;
 
 		}
 	}
